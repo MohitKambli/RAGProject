@@ -32,7 +32,7 @@ def ask_pdf_post():
 	retriever = vector_store.as_retriever(
 	search_type="similarity_score_threshold",
 		search_kwargs={
-			"k": 2,
+			"k": 20,
 			"score_threshold": 0.1,
 		},
 	)
@@ -47,6 +47,7 @@ def ask_pdf_post():
 		)
 	response_answer = {"answer": result["answer"], "sources": sources}
 	print('Response Answer: ', response_answer)
+	# print('Answer: ', result['answer'])
 
 
 def pdf_post():
